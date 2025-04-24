@@ -2,6 +2,7 @@
     <nav class="navbar">
 
       <router-link class="nav-link" to="/blog">Blog</router-link>
+      <li><router-link to="/analytics">Analytics</router-link></li>
       <div class="auth-links">
         <router-link v-if="!isLoggedIn" class="nav-link" to="/login">Login</router-link>
         <router-link v-if="!isLoggedIn" class="nav-link" to="/register">Register</router-link>

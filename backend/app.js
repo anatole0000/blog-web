@@ -4,6 +4,8 @@ const cookieSession = require('cookie-session');
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 const cors = require('cors');
+const commentRoutes = require('./routes/comments');
+const analyticsRoutes = require('./routes/analytics');
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.use(cookieSession({
 
 app.use('/auth', authRoutes);
 app.use('/blog', postRoutes);
+app.use('/comments', commentRoutes);
+app.use('/analytics', analyticsRoutes);
 
 mongoose.connect('mongodb://localhost:27017/blog', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(5000, () => console.log('Server running on port 5000')))
